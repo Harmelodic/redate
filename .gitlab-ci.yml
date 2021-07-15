@@ -6,4 +6,4 @@ stages:
 build:
   stage: build
   script:
-    - cargo build
+    - cargo build --release
