@@ -1,0 +1,9 @@
+image: rust:1.53.0
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - cargo build
