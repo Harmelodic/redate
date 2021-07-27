@@ -1,6 +1,4 @@
 fn main() {
-    println!("Hello, world!");
-
     // Gets files in directory
 
     // For file name in files
