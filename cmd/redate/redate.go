@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	files, err := io.GetFiles("./testFiles")
+	files, err := io.GetFiles("./test/data")
 	if err != nil {
 		return
 	}
