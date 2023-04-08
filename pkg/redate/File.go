@@ -16,6 +16,15 @@ func CreateFromDirEntry(dirEntry os.DirEntry) *File {
 	return redateFile
 }
 
-func (rf *File) CalculateAndSetNewRedateName() {
-	rf.RedateName = rf.OriginalName
+func (f *File) CalculateAndSetNewRedateName() {
+	f.CalculateAndSetNewRedateNameFormatted("2006-01-02")
+}
+
+func (f *File) CalculateAndSetNewRedateNameFormatted(layout string) {
+	record := findDate(f.OriginalName)
+	if record.Found {
+		f.RedateName = record.Date.Format(layout) + "-" + record.UndatedString
+	} else {
+		f.RedateName = f.OriginalName
+	}
 }
