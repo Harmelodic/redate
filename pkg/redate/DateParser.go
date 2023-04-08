@@ -20,5 +20,6 @@ func findDate(stringContainingDate string) DateFoundRecord {
 		IndexLocationOfDate: 0,
 		UndatedString:       "",
 	}
+	// TODO: Retrieve date from the string
 	return dateFoundRecord
 }
