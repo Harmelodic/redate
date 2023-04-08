@@ -3,9 +3,26 @@ package io
 import (
 	"log"
 	"os"
+	"redate/pkg/redate"
 )
 
-func GetFiles(directory string) ([]os.DirEntry, error) {
+func GetRedateFiles(directory string) ([]*redate.File, error) {
+	files, err := getFiles(directory)
+	if err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+
+	var redateFiles []*redate.File
+	for _, file := range files {
+		if !file.IsDir() {
+			redateFiles = append(redateFiles, redate.CreateFromDirEntry(file))
+		}
+	}
+	return redateFiles, nil
+}
+
+func getFiles(directory string) ([]os.DirEntry, error) {
 	currentDirectory, err := os.Open(directory)
 	if err != nil {
 		log.Fatal(err)
