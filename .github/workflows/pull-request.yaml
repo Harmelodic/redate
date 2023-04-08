@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v4
-      - run: go build -o redate src/*.go
+      - run: go build src/redate.go

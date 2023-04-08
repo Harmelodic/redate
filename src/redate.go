@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"redate/src/directory"
 	"redate/src/redate"
 )
 
 func main() {
-	files, err := getFiles("./testFiles")
+	files, err := directory.GetFiles("./testFiles")
 	if err != nil {
 		return
 	}

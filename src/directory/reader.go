@@ -1,11 +1,11 @@
-package main
+package directory
 
 import (
 	"log"
 	"os"
 )
 
-func getFiles(directory string) ([]os.DirEntry, error) {
+func GetFiles(directory string) ([]os.DirEntry, error) {
 	currentDirectory, err := os.Open(directory)
 	if err != nil {
 		log.Fatal(err)
