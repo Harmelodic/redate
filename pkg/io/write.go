@@ -7,4 +7,5 @@ import (
 
 func RenameFiles(redateFiles []*redate.File) {
 	fmt.Println("Renaming files...", redateFiles)
+	// TODO: rename files from OriginalName to RedateName
 }
