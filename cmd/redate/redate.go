@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"redate/src/directory"
-	"redate/src/redate"
+	"redate/pkg/directory"
+	"redate/pkg/redate"
 )
 
 func main() {
